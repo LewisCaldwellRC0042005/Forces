@@ -70,7 +70,35 @@ namespace Forces
             }
         }
 
+        private void TabPage1_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //read values from force and angles from textboxes
+                double Force = double.Parse(textBox4.Text);
+                double angle = double.Parse(textBox3.Text);
+                //calculate Fx and fy using equations fx + fcos and fy = fsin
+                double Fx = Force * cos(angle);
+                double Fy = Force * sin(angle);
+                //output solutions to label 1 and label2
+                label1.Text = "Fx =" + Fx;
+                label2.Text = "Fy =" + Fy;
+            }
+            catch
+            {
+                MessageBox.Show("Huh?");
+            }
+        }
     }
 }
 
